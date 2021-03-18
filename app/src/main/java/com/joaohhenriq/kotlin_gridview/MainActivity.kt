@@ -1,6 +1,7 @@
 package com.joaohhenriq.kotlin_gridview
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -51,6 +52,14 @@ class MainActivity : AppCompatActivity() {
 
             itemView.imageView.setImageResource(itemsList[position].image)
             itemView.textView.text = itemsList[position].name
+
+            itemView.setOnClickListener {
+                val intent = Intent(context, ItemDetails::class.java)
+                intent.putExtra("name", itemsList[position].name)
+                intent.putExtra("des", itemsList[position].des)
+                intent.putExtra("image" ,itemsList[position].image)
+                context!!.startActivity(intent)
+            }
 
             return itemView
         }
