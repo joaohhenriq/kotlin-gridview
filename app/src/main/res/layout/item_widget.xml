@@ -17,6 +17,7 @@
             android:id="@+id/imageView"
             android:layout_width="50pt"
             android:layout_height="50pt"
+            android:layout_gravity="center_horizontal"
             app:srcCompat="@android:drawable/ic_menu_gallery" />
 
         <TextView
